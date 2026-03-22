@@ -218,19 +218,3 @@ main().catch((e) => {
   const mount = document.getElementById("app-error");
   if (mount) mount.textContent = String(e && e.message ? e.message : e);
 });
-
-(function () {
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll(".ad-wrap ins[data-ad-status]").forEach((ins) => {
-      const wrap = ins.closest(".ad-wrap");
-      if (!wrap) return;
-      if (ins.getAttribute("data-ad-status") === "unfilled") {
-        wrap.style.display = "none";
-      } else {
-        wrap.style.display = "";
-        wrap.style.minHeight = "";
-      }
-    });
-  });
-  observer.observe(document.body, { subtree: true, attributes: true, attributeFilter: ["data-ad-status"] });
-})();
