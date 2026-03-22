@@ -417,9 +417,6 @@ a {
 }
 
 /* unfilled 时隐藏整个广告容器 */
-.ad-wrap:has(ins[data-ad-status="unfilled"]) {
-  display: none;
-}
 .info {
   padding: 20px 16px 24px;
   background: transparent;
@@ -593,6 +590,6 @@ a {
 }
 
 .ad-wrap:empty,
-.ad-wrap ins[data-ad-status="unfilled"] {
+.ad-wrap[data-ad-error="1"] {
   display: none;
 }
